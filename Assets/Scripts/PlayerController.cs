@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     Color onPress = new Color32(255, 255, 255, 130);
     Color regular = new Color32(255, 255, 255, 255);
 
-    bool isPressed = false;
+    public bool isPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +22,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.anyKey)
         {
+            isPressed = true;
             sprite.color = onPress;
         }
         else
         {
             sprite.color = regular;
+            isPressed = false;
         }
     }
 }
