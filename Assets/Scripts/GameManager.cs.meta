@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 67ab35f7c7fbf4841919ae25630aec4e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - beatChart: {instanceID: 0}
+  - dreamChart: {instanceID: 0}
+  - note: {fileID: 4365522915241872229, guid: a1d641dccab80de4aabf79326d65d4e3, type: 3}
+  - music: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
