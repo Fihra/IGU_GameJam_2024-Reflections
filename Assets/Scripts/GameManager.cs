@@ -6,7 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public BeatScroller beatChart;
+    [SerializeField]
+    public List<BeatScroller> beatCharts;
+
+    //public BeatScroller beatChart;
     public DreamScroller dreamChart;
 
     public float tempo;
@@ -36,7 +39,13 @@ public class GameManager : MonoBehaviour
             {
                 isPlaying = true;
                 dreamChart.hasStarted = true;
-                beatChart.hasStarted = true;
+
+                foreach(BeatScroller chart in beatCharts)
+                {
+                    chart.hasStarted = true;
+                }
+
+                //beatChart.hasStarted = true;
                 music.Play();
             }
         }
