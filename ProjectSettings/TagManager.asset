@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Dream
   - Activator
+  - RightScroll
+  - LeftScroll
+  - TopScroll
+  - BottomScroll
   layers:
   - Default
   - TransparentFX
@@ -15,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
+  - world
   - 
-  - 
-  - 
+  - Glow
   - 
   - 
   - 
