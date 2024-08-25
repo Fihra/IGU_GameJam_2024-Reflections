@@ -8,11 +8,16 @@ public class Note : MonoBehaviour
 
     public bool startNote;
 
+    const float FADEOUTTIME = 0.5f;
+
+    SpriteRenderer sr;
+
     PlayerController pc;
     // Start is called before the first frame update
     void Start()
     {
         pc = FindObjectOfType<PlayerController>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -20,7 +25,9 @@ public class Note : MonoBehaviour
     {
         if((pc.isPressed && canBePressed))
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
+            GameManager.instance.AddScore();
         }
 
     }
@@ -43,6 +50,18 @@ public class Note : MonoBehaviour
         if(other.CompareTag("Activator"))
         {
             canBePressed = false;
+            StartCoroutine("FadeOut");
+            GameManager.instance.AddMiss();
+            Destroy(gameObject);
+        }
+    }
+
+    public IEnumerator FadeOut()
+    {
+        while(sr.color.a > 0.0f)
+        {
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, sr.color.a - (Time.deltaTime / FADEOUTTIME));
+            yield return null;
         }
     }
 }
