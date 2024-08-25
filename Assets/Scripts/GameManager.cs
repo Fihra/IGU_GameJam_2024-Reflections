@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public bool isPlaying;
     public AudioSource music;
 
+    public GameObject titleText;
+    public GameObject startText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,9 @@ public class GameManager : MonoBehaviour
             {
                 isPlaying = true;
                 dreamChart.hasStarted = true;
+
+                titleText.GetComponent<FadeOut>().StartFade();
+                startText.GetComponent<FadeOut>().StartFade();
 
                 foreach(BeatScroller chart in beatCharts)
                 {
