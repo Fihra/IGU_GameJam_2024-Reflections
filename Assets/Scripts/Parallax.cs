@@ -15,7 +15,7 @@ public class Parallax : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float newPosition = Mathf.Repeat(Time.time * scrollSpeed, 20);
+        float newPosition = Mathf.Repeat(Time.time * scrollSpeed, 16);
         transform.position = startPosition + Vector2.right * newPosition;
     }
 }
