@@ -50,18 +50,8 @@ public class Note : MonoBehaviour
         if(other.CompareTag("Activator"))
         {
             canBePressed = false;
-            StartCoroutine("FadeOut");
             GameManager.instance.AddMiss();
             Destroy(gameObject);
-        }
-    }
-
-    public IEnumerator FadeOut()
-    {
-        while(sr.color.a > 0.0f)
-        {
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, sr.color.a - (Time.deltaTime / FADEOUTTIME));
-            yield return null;
         }
     }
 }
