@@ -20,6 +20,31 @@ public class GameManager : MonoBehaviour
     public GameObject titleText;
     public GameObject startText;
 
+    /// <summary>
+    /// Score Tracker
+    /// </summary>
+    private int score = 0;
+    private int miss = 0;
+
+    public void AddScore()
+    {
+        score += 1;
+    }
+
+    public void AddMiss()
+    {
+        miss += 1;
+    }
+
+    public List<int> FinalScore()
+    {
+        List<int> mainScore = new List<int>();
+        mainScore.Add(score);
+        mainScore.Add(miss);
+
+        return mainScore;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
